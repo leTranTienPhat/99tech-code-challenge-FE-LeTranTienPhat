@@ -1,9 +1,16 @@
 import { useBreakpoint } from '@/problem2/hooks/useBreakpoint.ts';
+import { LucideArrowRight } from 'lucide-react';
 import { domAnimation, LazyMotion } from 'motion/react';
 import * as m from 'motion/react-m';
 import { useContext } from 'react';
 import { CurrencyExchangeContext } from '../../context/config.ts';
 import { CurrencyInput } from './currency-input.tsx';
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/problem2/components/ui/tooltip';
 
 const OFFSET = 180;
 const ROTATE_RADIUS = 80;
@@ -86,13 +93,18 @@ export const CurrencyExchange = () => {
           <CurrencyInput direction={isFlip ? 'to' : 'from'} />
         </m.div>
 
-        <button
-          type="button"
-          className="aspect-square h-8 rotate-90 rounded-full bg-blue-600 p-1 text-xs font-medium text-white shadow-lg transition-all duration-300 hover:bg-blue-700 md:rotate-0"
-          onClick={handleFlipData}
-        >
-          -&gt;
-        </button>
+        <Tooltip>
+          <TooltipTrigger type="button">
+            <button
+              type="button"
+              className="aspect-square h-8 rotate-90 rounded-full bg-blue-600 p-1 text-xs font-medium text-white shadow-lg transition-all duration-300 hover:bg-blue-700 md:rotate-0"
+              onClick={handleFlipData}
+            >
+              <LucideArrowRight className="mx-auto h-4 w-4" />
+            </button>
+          </TooltipTrigger>
+          <TooltipContent>Swap</TooltipContent>
+        </Tooltip>
 
         {/* Right Input */}
         <m.div
