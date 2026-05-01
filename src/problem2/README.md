@@ -25,10 +25,10 @@ npm run dev
 - **SWR (`useSWR`)**: Efficient data fetching with caching, revalidation, and error handling
 - **Custom Fetcher**: Robust error handling for API requests to `https://interview.switcheo.com/prices.json`
 
-### Animation & Motion
+### Animation
 
-- **Framer Motion**: Advanced animations with `LazyMotion` for performance optimization
-- **Custom Animation System**: Sophisticated flip animations with different trajectories for desktop/mobile
+- **Framer Motion**: Wrap animations with `LazyMotion` for performance optimization
+- **Custom Animation System**: Flip animations with different trajectories for desktop/mobile
 
 ### UI Framework
 
