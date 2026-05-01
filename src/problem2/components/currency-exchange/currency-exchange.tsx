@@ -95,13 +95,12 @@ export const CurrencyExchange = () => {
 
         <Tooltip>
           <TooltipTrigger type="button">
-            <button
-              type="button"
-              className="aspect-square h-8 rotate-90 rounded-full bg-blue-600 p-1 text-xs font-medium text-white shadow-lg transition-all duration-300 hover:bg-blue-700 md:rotate-0"
+            <div
+              className="cursor:pointer rotate-90 rounded-full bg-blue-600 p-2 text-white shadow-lg transition-all duration-300 hover:bg-blue-700 md:rotate-0"
               onClick={handleFlipData}
             >
-              <LucideArrowRight className="mx-auto h-4 w-4" />
-            </button>
+              <LucideArrowRight className="h-4 w-4" />
+            </div>
           </TooltipTrigger>
           <TooltipContent>Swap</TooltipContent>
         </Tooltip>
