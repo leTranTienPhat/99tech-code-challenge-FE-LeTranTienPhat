@@ -10,6 +10,9 @@ All solution are inside of `/src` folder with their own README.md, which contain
   - Mathematical formula using Gauss summation (O(1))
 
 - [Problem 2: Fancy Form - Currency Exchange](./src/problem2/README.md)
+  
+Quick Preview URL: https://99tech-code-challenge-fe-tienphat.vercel.app/
+
   - Animated currency flip interactions
   - Responsive design with mobile/desktop layouts
   - Modern React with useContext, SWR, and Framer Motion
