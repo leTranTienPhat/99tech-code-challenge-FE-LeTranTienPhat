@@ -9,14 +9,7 @@ function App() {
       <TooltipProvider>
         <CurrencyExchangeProvider>
           <Problem2 />
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              classNames: {
-                success: 'bg-green-500 text-red-500 whitespace-pre-line',
-              },
-            }}
-          />
+          <Toaster position="top-right" />
         </CurrencyExchangeProvider>
       </TooltipProvider>
     </div>
