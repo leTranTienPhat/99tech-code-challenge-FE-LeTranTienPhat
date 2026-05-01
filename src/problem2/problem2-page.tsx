@@ -55,7 +55,7 @@ export const Problem2 = () => {
                   onClick={() => updateCurrency(key, 'from')}
                 >
                   <img
-                    src={`src/assets/tokens/${key}.svg`}
+                    src={`tokens/${key}.svg`}
                     className="h-6 w-6"
                     alt={key}
                   />

@@ -52,7 +52,7 @@ const CurrencyExchangeProvider = ({
         acc.push({
           label: item.currency,
           value: item.currency,
-          icon: 'src/assets/tokens/' + item.currency + '.svg',
+          icon: 'tokens/' + item.currency + '.svg',
         });
         exchangeRate[item.currency] = item.price;
       }
