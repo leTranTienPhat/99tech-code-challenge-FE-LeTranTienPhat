@@ -1,8 +1,8 @@
-import { Input } from '@/problem2/components/ui/input.tsx';
-import { Wrapper } from '@/problem2/components/ui/wrapper.tsx';
 import { AlertCircle, Wallet } from 'lucide-react';
 import { useContext } from 'react';
 import { CustomSelect } from '../custom/custom-select.tsx';
+import { Input } from '../ui/input.tsx';
+import { Wrapper } from '../ui/wrapper.tsx';
 
 import {
   Tooltip,
@@ -77,7 +77,7 @@ export const CurrencyInput = ({ direction = 'from', name }: Props) => {
           )}
         </div>
 
-        {isConvertFrom && (
+        {isConvertFrom && userWallet[exchangeValues.currencyFrom] > 0 && (
           <button
             type="button"
             className="text-xs text-yellow-400"

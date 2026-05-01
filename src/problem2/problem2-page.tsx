@@ -1,4 +1,5 @@
 import CurrencyExchange from '@/problem2/components/currency-exchange/currency-exchange.tsx';
+import { CurrencyIcon } from '@/problem2/components/custom/currency-icon';
 import { Wrapper } from '@/problem2/components/ui/wrapper';
 import { CurrencyExchangeContext } from '@/problem2/context/config';
 import { exRateFormula } from '@/problem2/libs/calculate-ex-rate';
@@ -54,10 +55,12 @@ export const Problem2 = () => {
                   className="flex gap-2"
                   onClick={() => updateCurrency(key, 'from')}
                 >
-                  <img
-                    src={`tokens/${key}.svg`}
-                    className="h-6 w-6"
-                    alt={key}
+                  <CurrencyIcon
+                    item={{
+                      value: key,
+                      label: key,
+                      icon: `tokens/${key}.svg`,
+                    }}
                   />
                   <p className="whitespace-nowrap">
                     {key}: {userWallet[key]}

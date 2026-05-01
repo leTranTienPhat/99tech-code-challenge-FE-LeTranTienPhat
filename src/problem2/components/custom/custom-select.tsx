@@ -1,5 +1,6 @@
 import { cn } from '@/problem2/libs/utils';
 import type { ISelectOption } from '@/problem2/types/select';
+import type { ComponentProps } from 'react';
 import {
   Select,
   SelectContent,
@@ -8,8 +9,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
+import { CurrencyIcon } from './currency-icon';
 
-interface Props extends React.ComponentProps<typeof Select> {
+interface Props extends ComponentProps<typeof Select> {
   items?: ISelectOption[];
   placeholder?: string;
   classNames?: {
@@ -41,13 +43,7 @@ export const CustomSelect = ({
               value={item.value}
               className={cn('py-2', classNames?.item)}
             >
-              {item.icon && (
-                <img
-                  src={item.icon}
-                  alt={item.label}
-                  className="size-5 rounded-full bg-red-200"
-                />
-              )}
+              {item.icon && <CurrencyIcon item={item} />}
               {item.label}
             </SelectItem>
           ))}
