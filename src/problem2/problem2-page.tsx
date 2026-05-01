@@ -34,7 +34,7 @@ export const Problem2 = () => {
         <CurrencyExchange />
         {exchangeRate && (
           <p className="py-2">
-            Current Rate: 1 {exchangeValues.currencyFrom} ={' '}
+            Current Rate: 1 {exchangeValues.currencyFrom} ~{' '}
             {isNaN(currentRate ?? NaN) ? '...' : currentRate}{' '}
             {exchangeValues.currencyTo}
           </p>
