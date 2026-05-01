@@ -6,6 +6,12 @@ Desktop: <img width="816" height="555" alt="image" src="https://github.com/user-
 
 Mobile: <img width="288" height="509" alt="image" src="https://github.com/user-attachments/assets/5d889572-fe8e-4120-bbb3-0625754b69e8" />
 
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
 
 ## Key Technologies & Libraries
 
