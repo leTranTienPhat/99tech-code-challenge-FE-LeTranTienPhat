@@ -9,6 +9,7 @@ Below are the problems that I noticed in this codebase
 > ### **Not well-organized**: It is a single file with everything inside it (types, logic, and multiple components).
 
 -> **Solution**: Split into different modules/folders based on functionality:
+- `<WalletPage />`: Main component
 
 - `components/`: For `<WalletRows />`, as it is considered a reusable component within `<WalletPage />`.
 
