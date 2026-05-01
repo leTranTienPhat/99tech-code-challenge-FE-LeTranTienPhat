@@ -17,6 +17,6 @@ Quick Preview URL: https://99tech-code-challenge-fe-tienphat.vercel.app/
   - Responsive design with mobile/desktop layouts
   - Modern React with useContext, SWR, and Framer Motion
 
-- [Problem 3: README.md](./src/problem3/README.md)
+- [Problem 3: Messy React](./src/problem3/README.md)
   - README.md file point out the problem and solution
   - Refactor version with better code structure and performance
