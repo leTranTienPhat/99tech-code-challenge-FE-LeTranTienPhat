@@ -4,12 +4,12 @@ import { AlertCircle, Wallet } from 'lucide-react';
 import { useContext } from 'react';
 import { CustomSelect } from '../custom/custom-select.tsx';
 
-import { CurrencyExchangeContext } from '@/problem2/components/context/config.ts';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '@/problem2/components/ui/tooltip';
+import { CurrencyExchangeContext } from '@/problem2/context/config.ts';
 
 interface Props {
   direction?: 'from' | 'to';
@@ -58,7 +58,7 @@ export const CurrencyInput = ({ direction = 'from', name }: Props) => {
           {walletAmount > 0 && (
             <p className="flex items-center gap-1 text-xs text-gray-500">
               <Wallet size={12} />
-              {walletAmount}
+              {walletAmount.toFixed(6)}
 
               <Tooltip>
                 <TooltipTrigger type="button">
@@ -66,7 +66,7 @@ export const CurrencyInput = ({ direction = 'from', name }: Props) => {
                 </TooltipTrigger>
                 <TooltipContent>
                   <div className="text-center text-xs">
-                    <p>Your balance: {walletAmount}</p>
+                    <p>Your balance: {walletAmount.toFixed(12)}</p>
                     <p className="text-[10px] text-gray-400">
                       (Mock value for all currency)
                     </p>

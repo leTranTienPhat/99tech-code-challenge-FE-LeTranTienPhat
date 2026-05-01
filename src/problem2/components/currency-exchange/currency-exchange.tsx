@@ -2,7 +2,7 @@ import { useBreakpoint } from '@/problem2/hooks/useBreakpoint.ts';
 import { domAnimation, LazyMotion } from 'motion/react';
 import * as m from 'motion/react-m';
 import { useContext } from 'react';
-import { CurrencyExchangeContext } from '../context/config.ts';
+import { CurrencyExchangeContext } from '../../context/config.ts';
 import { CurrencyInput } from './currency-input.tsx';
 
 const OFFSET = 180;

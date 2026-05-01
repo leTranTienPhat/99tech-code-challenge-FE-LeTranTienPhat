@@ -22,7 +22,8 @@ const CurrencyExchangeProvider = ({
 }) => {
   const { data } = useGetPrices();
 
-  const userWallet = MOCK_USER_WALLET;
+  const [userWallet, setUserWallet] =
+    useState<Record<string, number>>(MOCK_USER_WALLET);
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -131,7 +132,7 @@ const CurrencyExchangeProvider = ({
   };
 
   const handleSubmit = async () => {
-    const { amountFrom, amountTo } = exchangeValues;
+    const { amountFrom, amountTo, currencyFrom, currencyTo } = exchangeValues;
 
     setIsLoading(true);
 
@@ -144,15 +145,29 @@ const CurrencyExchangeProvider = ({
       return;
     }
 
-    if (amountFrom > userWallet[exchangeValues.currencyFrom]) {
+    if (amountFrom > (userWallet[currencyFrom] ?? 0)) {
       errorToast('Your balance is not enough to do the exchange');
 
       return;
     }
 
-    successToast('Exchange sucessfully');
+    if (currencyFrom === currencyTo) {
+      errorToast('Please select different currencies');
 
-    console.log('Exchange sucessfully', exchangeValues);
+      return;
+    }
+
+    setUserWallet((prev) => {
+      return {
+        ...prev,
+        [currencyFrom]: prev[currencyFrom] - amountFrom,
+        [currencyTo]: (prev[currencyTo] ?? 0) + amountTo,
+      };
+    });
+
+    successToast(
+      `Exchange sucessfully: \n ${amountFrom} ${currencyFrom} -> ${amountTo} ${currencyTo}`
+    );
   };
 
   const contextValue = {

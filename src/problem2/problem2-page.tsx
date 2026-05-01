@@ -1,6 +1,6 @@
-import { CurrencyExchangeContext } from '@/problem2/components/context/config';
 import CurrencyExchange from '@/problem2/components/currency-exchange/currency-exchange.tsx';
 import { Wrapper } from '@/problem2/components/ui/wrapper';
+import { CurrencyExchangeContext } from '@/problem2/context/config';
 import { exRateFormula } from '@/problem2/libs/calculate-ex-rate';
 import { cn } from '@/problem2/libs/utils';
 import { useContext, type SubmitEventHandler } from 'react';
@@ -19,6 +19,14 @@ export const Problem2 = () => {
     handleSubmit();
   };
 
+  const currentRate = exchangeRate
+    ? exRateFormula({
+        from: 1,
+        rateFrom: exchangeRate?.[exchangeValues.currencyFrom],
+        rateTo: exchangeRate?.[exchangeValues.currencyTo],
+      })
+    : null;
+
   return (
     <Wrapper className="mx-auto my-auto bg-gray-100 text-center">
       <h3 className="text-2xl font-bold">Crypto Exchange</h3>
@@ -27,18 +35,18 @@ export const Problem2 = () => {
         {exchangeRate && (
           <p className="py-2">
             Current Rate: 1 {exchangeValues.currencyFrom} ={' '}
-            {exRateFormula({
-              from: 1,
-              rateFrom: exchangeRate?.[exchangeValues.currencyFrom],
-              rateTo: exchangeRate?.[exchangeValues.currencyTo],
-            })}{' '}
+            {isNaN(currentRate ?? NaN) ? '...' : currentRate}{' '}
             {exchangeValues.currencyTo}
           </p>
         )}
         <div className="pb-4 text-start">
           <p className="pb-4 font-semibold">Your Mock Wallet #01</p>
-          <div className="space-y-5 pl-2">
+          <div className="max-h-[200px] space-y-5 overflow-y-scroll pl-2">
             {Object.keys(userWallet).map((key) => {
+              if (userWallet[key] === 0) {
+                return null;
+              }
+
               return (
                 <button
                   type="button"
@@ -46,7 +54,11 @@ export const Problem2 = () => {
                   className="flex gap-2"
                   onClick={() => updateCurrency(key, 'from')}
                 >
-                  <img src={`src/assets/tokens/${key}.svg`} alt={key} />
+                  <img
+                    src={`src/assets/tokens/${key}.svg`}
+                    className="h-6 w-6"
+                    alt={key}
+                  />
                   <p className="whitespace-nowrap">
                     {key}: {userWallet[key]}
                   </p>
