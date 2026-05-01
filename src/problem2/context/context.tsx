@@ -165,6 +165,11 @@ const CurrencyExchangeProvider = ({
       };
     });
 
+    updateValue({
+      amountFrom: 0,
+      amountTo: 0,
+    });
+
     successToast(
       `Exchange sucessfully: \n ${amountFrom} ${currencyFrom} -> ${amountTo} ${currencyTo}`
     );
