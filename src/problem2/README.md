@@ -1,6 +1,6 @@
 # Problem 2: Fancy Form - Currency Exchange
 
-Component Preview URL: https://99tech-code-challenge-fe-tienphat.vercel.app/
+Component Preview URL: https://fancy-form-tienphat.vercel.app/
 
 Desktop: <img width="816" height="555" alt="image" src="https://github.com/user-attachments/assets/be1d640a-dfd2-464b-954c-93d731c37b71" />
 
