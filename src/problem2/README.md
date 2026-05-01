@@ -1,5 +1,12 @@
 # Problem 2: Fancy Form - Currency Exchange
 
+Component Preview URL: https://99tech-code-challenge-fe-tienphat.vercel.app/
+
+Desktop: <img width="816" height="555" alt="image" src="https://github.com/user-attachments/assets/be1d640a-dfd2-464b-954c-93d731c37b71" />
+
+Mobile: <img width="288" height="509" alt="image" src="https://github.com/user-attachments/assets/5d889572-fe8e-4120-bbb3-0625754b69e8" />
+
+
 ## Key Technologies & Libraries
 
 ### State Management
