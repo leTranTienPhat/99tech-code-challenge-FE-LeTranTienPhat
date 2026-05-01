@@ -11,7 +11,7 @@ All solution are inside of `/src` folder with their own README.md, which contain
 
 - [Problem 2: Fancy Form - Currency Exchange](./src/problem2/README.md)
 
-Quick Preview URL: https://99tech-code-challenge-fe-tienphat.vercel.app/
+Quick Preview URL: https://fancy-form-tienphat.vercel.app/
 
 To run locally:
 
